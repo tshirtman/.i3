@@ -172,3 +172,4 @@ bindsym mod4+c exec gnome-control-center&
 
 # auto floating windows
 for_window [class="Gnome-control-center"] floating enable
+for_window [class="main.py"] floating enable
