@@ -20,8 +20,8 @@ font xft:Sans 8
 # colors
 # colorclass 		border 	bg 	text 	indicator
 client.focused 		#850049 #853c00 #ffffff #ff0000
-client.focused_inactive	#523344 #523335 #ffffff #ff0000
-client.unfocused	#786870 #786868 #ffffff #aa0000
+client.unfocused	#523344 #523335 #ffffff #ff0000
+client.focused_inactive	#786870 #786868 #ffffff #aa0000
 
 # The font above is very space-efficient, that is, it looks good, sharp and
 # clear in small sizes. However, if you need a lot of unicode glyphs or
@@ -145,7 +145,7 @@ bindsym Mod4+z workspace back_and_forth
 
 # marks
 bindsym Mod4+m exec i3-input -F 'mark %s' -P 'Mark name: '
-bindsym Mod4+Shift+m exec i3-input -F '[con_mark=%s] focus' -P 'Go to mark: '
+bindsym Mod4+g exec i3-input -F '[con_mark=%s] focus' -P 'Go to mark: '
 
 # programs
 bindsym mod4+n exec nautilus --no-desktop&
@@ -157,6 +157,7 @@ bindsym XF86AudioNext exec mocp -f
 bindsym XF86AudioPrev exec mocp -r
 bindsym XF86Mail exec tv&
 bindsym mod4+c exec gnome-control-center&
+bindsym mod4+shift+x exec dm-tool lock
 
 # auto floating windows
 for_window [class="Gnome-control-center"] floating enable
