@@ -158,7 +158,7 @@ bindsym XF86AudioNext exec mocp -f
 bindsym XF86AudioPrev exec mocp -r
 bindsym XF86Mail exec tv
 bindsym mod4+c exec gnome-control-center
-bindsym mod4+i exec dm-tool switch-to-greeter
+#bindsym mod4+i exec dm-tool switch-to-greeter
 bindsym mod4+shift+x exec dm-tool lock
 
 # auto floating windows
