@@ -128,7 +128,7 @@ bindsym Mod4+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-	tray_output VGA1
+	#tray_output VGA1
         status_command i3status
 	font xft:Sans 10
 }
@@ -149,15 +149,15 @@ bindsym Mod4+m exec i3-input -F 'mark %s' -P 'Mark name: '
 bindsym Mod4+g exec i3-input -F '[con_mark=%s] focus' -P 'Go to mark: '
 
 # programs
-bindsym mod4+n exec pcmanfm
+bindsym mod4+n exec nautilus --no-desktop
 bindsym XF86AudioLowerVolume exec amixer -c 0 -q set Master 2dB-
 bindsym XF86AudioRaiseVolume exec amixer -c 0 -q set Master 2dB+
 bindsym XF86AudioMute exec amixer -D pulse set Master toggle
 bindsym XF86AudioPlay exec mocp -G
 bindsym XF86AudioNext exec mocp -f
 bindsym XF86AudioPrev exec mocp -r
-bindsym XF86Mail exec tv
-bindsym mod4+c exec gnome-control-center
+bindsym XF86Mail exec ~/bin/tv
+bindsym mod4+c exec unity-control-center
 bindsym mod4+i exec dm-tool switch-to-greeter
 bindsym mod4+shift+x exec dm-tool lock
 
@@ -168,4 +168,4 @@ for_window [class="main.py"] floating enable
 # autostart apps
 exec keynav
 exec nm-applet
-exec gnome-settings-daemon
+exec unity-settings-daemon
