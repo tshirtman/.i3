@@ -2,6 +2,8 @@
 # sudo apt-get install keynav acpi jq i3 pcmanfm lm-sensors sysstat
 ln -sf $PWD/keynavrc ~/.keynavrc
 ln -sf $PWD/i3blocks.conf ~/.i3blocks.conf
+
+mkdir -p ~/.local/share/fonts/
 ln -sf $PWD/fonts/* ~/.local/share/fonts/
 
 if [ ! -e ~/i3blocks ]
