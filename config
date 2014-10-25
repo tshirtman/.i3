@@ -134,7 +134,7 @@ bindsym Mod4+r mode "resize"
 # finds out, if available)
 bar {
 	#tray_output VGA1
-        status_command i3status
+        status_command ~/i3blocks/i3blocks
 	font xft:Sans 10
 }
 
@@ -155,20 +155,21 @@ bindsym Mod4+g exec i3-input -F '[con_mark=%s] focus' -P 'Go to mark: '
 
 # programs
 bindsym mod4+n exec nautilus --no-desktop
-bindsym XF86AudioLowerVolume exec amixer -c 0 -q set Master 2dB-
-bindsym XF86AudioRaiseVolume exec amixer -c 0 -q set Master 2dB+
-bindsym XF86AudioMute exec amixer -D pulse set Master toggle
+bindsym XF86AudioLowerVolume exec amixer -c 0 -q set Master 2dB- && pkill i3blocks --signal 35
+bindsym XF86AudioRaiseVolume exec amixer -c 0 -q set Master 2dB+ && pkill i3blocks --signal 35
+bindsym XF86AudioMute exec amixer -D pulse set Master toggle && pkill i3blocks --signal 35
 bindsym XF86AudioPlay exec mocp -G
 bindsym XF86AudioNext exec mocp -f
 bindsym XF86AudioPrev exec mocp -r
 bindsym XF86Mail exec ~/bin/tv
-bindsym mod4+c exec unity-control-center
-bindsym mod4+i exec dm-tool switch-to-greeter
-bindsym mod4+shift+x exec dm-tool lock
+bindsym Mod4+c exec unity-control-center
+bindsym Mod4+i exec i3-input
+bindsym Mod4+shift+x exec dm-tool lock
 
 # auto floating windows
 for_window [class="Gnome-control-center"] floating enable
 for_window [class="main.py"] floating enable
+for_window [class="display2.py"] floating enable
 
 # autostart apps
 exec keynav
