@@ -164,6 +164,7 @@ bindsym XF86AudioPrev exec mocp -r
 bindsym XF86Mail exec ~/bin/tv
 bindsym XF86Calculator exec suspend
 bindsym Mod4+i exec i3-input
+bindsym Mod4+u border toggle
 bindsym mod4+c exec gnome-control-center
 
 # auto floating windows
@@ -177,3 +178,4 @@ for_window [class="kviewer"] floating enable
 exec keynav
 exec nm-applet
 exec unity-settings-daemon
+exec eval $(cat ~/.fehbg)
