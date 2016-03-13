@@ -179,3 +179,5 @@ exec keynav
 exec nm-applet
 exec unity-settings-daemon
 exec eval $(cat ~/.fehbg)
+exec mpd
+exec update-notifier
