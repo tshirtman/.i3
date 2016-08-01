@@ -155,9 +155,11 @@ bindsym Mod4+g exec i3-input -F '[con_mark=%s] focus' -P 'Go to mark: '
 
 # programs
 bindsym mod4+n exec nautilus --no-desktop
-bindsym XF86AudioLowerVolume exec amixer -c 0 -q set Master 2dB- && pkill i3blocks --signal 35
-bindsym XF86AudioRaiseVolume exec amixer -c 0 -q set Master 2dB+ && pkill i3blocks --signal 35
-bindsym XF86AudioMute exec amixer -D pulse set Master toggle && pkill i3blocks --signal 35
+bindsym XF86AudioLowerVolume exec amixer -D pulse set Master 5%- && pkill -RTMIN+10 i3blocks
+bindsym XF86AudioRaiseVolume exec amixer -D pulse set Master 5%+ && pkill -RTMIN+10 i3blocks
+bindsym Shift+XF86AudioLowerVolume exec amixer -D pulse set Master 1%- && pkill -RTMIN+10 i3blocks
+bindsym Shift+XF86AudioRaiseVolume exec amixer -D pulse set Master 1%+ && pkill -RTMIN+10 i3blocks
+bindsym XF86AudioMute exec amixer -D pulse set Master toggle && pkill -RTMIN+10 i3blocks
 bindsym XF86AudioPlay exec mocp -G
 bindsym XF86AudioNext exec mocp -f
 bindsym XF86AudioPrev exec mocp -r
