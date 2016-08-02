@@ -13,3 +13,9 @@ then
 	make
 	cd -
 fi
+
+if [ -n -f /usr/local/bin/brightness ]; then
+	sudo cp $HOME/.i3/brightness /usr/local/bin/
+fi
+echo 'please add the following rule to in "sudo visudo" if not present already'
+echo "%sudo   ALL=NOPASSWD: /usr/local/bin/brightness"

@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+
+val=$(cat /sys/class/backlight/radeon_bl0/brightness)
+val=$((val $1))
+echo $val > /sys/class/backlight/radeon_bl0/brightness
