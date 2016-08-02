@@ -161,7 +161,7 @@ bindsym Shift+XF86AudioLowerVolume exec amixer -D pulse set Master 1%- && pkill 
 bindsym Shift+XF86AudioRaiseVolume exec amixer -D pulse set Master 1%+ && pkill -RTMIN+10 i3blocks
 bindsym XF86AudioMute exec amixer -D pulse set Master toggle && pkill -RTMIN+10 i3blocks
 bindsym XF86MonBrightnessUp exec sudo /usr/local/bin/brightness +10
-bindsym XF86MonBrightnessDown exec sudo /usr/local/bin/brightness -10
+bindsym XF86MonBrightnessDown exec sudo /usr/local/bin/brightness /2
 bindsym XF86AudioPlay exec mocp -G
 bindsym XF86AudioNext exec mocp -f
 bindsym XF86AudioPrev exec mocp -r
