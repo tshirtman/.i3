@@ -85,6 +85,9 @@ bindsym Mod4+e layout toggle split
 # toggle tiling / floating
 bindsym Mod4+Shift+space floating toggle
 
+# toggle stickyness
+bindsym Mod4+y sticky toggle
+
 # change focus between tiling / floating windows
 bindsym Mod4+space focus mode_toggle
 
@@ -177,6 +180,8 @@ for_window [class="main.py"] floating enable
 for_window [class="python2.7"] floating enable
 for_window [class="display2.py"] floating enable
 for_window [class="kviewer"] floating enable
+for_window [class="mplayer"] floating enable
+for_window [class="vlc"] floating enable
 
 # autostart apps
 exec keynav
