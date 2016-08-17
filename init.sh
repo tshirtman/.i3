@@ -17,5 +17,15 @@ fi
 if [ ! -e /usr/local/bin/brightness ]; then
 	sudo cp $HOME/.i3/brightness /usr/local/bin/
 fi
+
+if [ ! -e /etc/apt/sources.list.d/i3.list ]; then
+	echo "deb http://debian.sur5r.net/i3/ $(lsb_release -c -s) universe"\
+	    | sudo tee /etc/apt/sources.list.d/i3.list
+	sudo apt-get update
+	sudo apt-get --allow-unauthenticated install sur5r-keyring
+	sudo apt-get update
+	sudo apt install i3
+fi
+
 echo 'please add the following rule to in "sudo visudo" if not present already'
 echo "%sudo   ALL=NOPASSWD: /usr/local/bin/brightness"
