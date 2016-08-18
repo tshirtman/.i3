@@ -33,7 +33,7 @@ client.focused_inactive	#786870 #786868 #ffffff #aa0000
 floating_modifier Mod4
 
 # start a terminal
-bindsym Mod4+Return exec i3-sensible-terminal
+bindsym Mod4+Return exec gnome-terminal --hide-menubar
 
 # kill focused window
 bindsym Mod4+Shift+c kill
@@ -172,7 +172,7 @@ bindsym XF86Mail exec ~/bin/tv
 bindsym XF86Calculator exec suspend
 bindsym Mod4+i exec i3-input
 bindsym Mod4+u border toggle
-bindsym mod4+c exec gnome-control-center
+bindsym mod4+c exec unity-control-center
 
 # auto floating windows
 for_window [class="Gnome-control-center"] floating enable

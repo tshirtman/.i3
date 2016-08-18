@@ -37,5 +37,22 @@ case $yn in
 esac
 done
 
+if [ 1 -gt $(grep gnome-keyring ~/.profile|wc -l) ]; then
+while true
+do
+	read -p "do you want to start gnome-keyring in .profile (Y/N)" yn
+case $yn in
+	[Yy]*) cat .profile-gnome-keyring >> ~/.profile
+		break;;
+	[Nn]*) break;;
+	*) echo "please answer (y)es or (n)o";;
+esac
+done
+fi
+
+if [ 1 -gt $(grep XDG_CURRENT_DESKTOP ~/.profile|wc -l) ]; then
+	cat .profile-control-center >> ~/.profile
+fi
+
 echo 'please add the following rule to in "sudo visudo" if not present already'
 echo "%sudo   ALL=NOPASSWD: /usr/local/bin/brightness"
