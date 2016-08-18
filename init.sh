@@ -27,5 +27,15 @@ if [ ! -e /etc/apt/sources.list.d/i3.list ]; then
 	sudo apt install i3
 fi
 
+while true
+do
+	read -p "do you want to swap ctrl and capslock (using gsettings) (Y/N)" yn
+case $yn in
+	[Yy]*) gsettings set org.gnome.desktop.input-sources xkb-options "['ctrl:swapcaps']"; break;;
+	[Nn]*) break;;
+	*) echo "please answer (y)es or (n)o";;
+esac
+done
+
 echo 'please add the following rule to in "sudo visudo" if not present already'
 echo "%sudo   ALL=NOPASSWD: /usr/local/bin/brightness"
