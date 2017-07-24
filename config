@@ -39,8 +39,10 @@ bindsym Mod4+Return exec gnome-terminal --hide-menubar
 bindsym Mod4+Shift+c kill
 
 # start dmenu (a program launcher)
-bindsym Mod4+x exec dmenu_run
-bindsym Mod4+p exec --no-startup-id i3-dmenu-desktop
+bindsym Mod4+x exec dmenu_run -p 'run:'
+bindsym Mod4+p exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -p 'start:' -l 15"
+bindsym Mod4+o exec --no-startup-id xdg-open "$(find -type f | dmenu -i -p 'open:' -l 15)" 2> /tmp/out.txt
+bindsym Mod4+shift+o exec env > /tmp/out.txt
 
 # change focus
 bindsym Mod4+j focus down
@@ -137,13 +139,13 @@ bindsym Mod4+r mode "resize"
 # finds out, if available)
 bar {
         status_command ~/i3blocks/i3blocks
-	tray_output VGA-0
-	font xft:Sans 10
+	# tray_output VGA-0
+	font xft:Sans 12
 }
 
 # dynamic tagging feature
-bindsym Mod4+t exec i3-msg workspace $(~/.i3/get_workspace_options.sh | dmenu -b)
-bindsym Mod4+Shift+t exec i3-msg move container to workspace $(~/.i3/get_workspace_options.sh | dmenu -b) 
+bindsym Mod4+t exec i3-msg workspace $(~/.i3/get_workspace_options.sh | dmenu -p "switch to:")
+bindsym Mod4+Shift+t exec i3-msg move container to workspace $(~/.i3/get_workspace_options.sh | dmenu -p 'move to:')
 
 # toggle screen of workspace
 bindsym Mod4+d move container to output right
@@ -169,6 +171,7 @@ bindsym XF86AudioPlay exec mocp -G
 bindsym XF86AudioNext exec mocp -f
 bindsym XF86AudioPrev exec mocp -r
 bindsym XF86Mail exec ~/bin/tv
+bindsym XF86Display exec sudo hibernate
 bindsym XF86Calculator exec suspend
 bindsym Mod4+i exec i3-input
 bindsym Mod4+u border toggle
@@ -178,15 +181,36 @@ bindsym mod4+c exec unity-control-center
 for_window [class="Gnome-control-center"] floating enable
 for_window [class="main.py"] floating enable
 for_window [class="python2.7"] floating enable
+for_window [class="python2"] floating enable
+for_window [class="python3"] floating enable
+for_window [class="python3.6"] floating enable
 for_window [class="display2.py"] floating enable
 for_window [class="kviewer"] floating enable
 for_window [class="mplayer"] floating enable
 for_window [class="vlc"] floating enable
 
+# place specific windows on specific desktops by default
+assign [class="Firefox"] "web"
+assign [class="Telegram"] "chat"
+assign [class="Slack"] "chat"
+assign [class="Pidgin"] "chat"
+assign [title="Transmission"] "dl"
+for_window [title="mutt"] move workspace "mail"
+for_window [title="mailsync"] move workspace "mail"
+for_window [title="gabriel@pi"] move workspace "irc"
+
 # autostart apps
-exec keynav
-exec nm-applet
-exec unity-settings-daemon
-exec eval $(cat ~/.fehbg)
-exec mpd
-exec update-notifier
+exec --no-startup-id keynav
+exec --no-startup-id nm-applet
+exec --no-startup-id unity-settings-daemon
+exec --no-startup-id update-notifier
+
+exec --no-startup-id slack
+exec --no-startup-id ~/Téléchargements/Telegram/Telegram
+exec --no-startup-id pidgin
+exec --no-startup-id firefox
+exec --no-startup-id gnome-terminal --window-with-profile=irc irc
+exec --no-startup-id gnome-terminal --window-with-profile=mutt mutt
+exec --no-startup-id gnome-terminal --window-with-profile=mailsync mailsync
+
+exec --no-startup-id i3-msg "workspace mail"
