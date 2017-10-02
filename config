@@ -228,4 +228,6 @@ exec --no-startup-id redshift-gtk
 
 exec --no-startup-id ~/.i3/replace_osd
 
+exec --no-startup-id ~/.i3/replace_osd
+
 exec --no-startup-id i3-msg "workspace mail"
