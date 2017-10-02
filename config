@@ -213,4 +213,6 @@ exec --no-startup-id gnome-terminal --window-with-profile=irc irc
 exec --no-startup-id gnome-terminal --window-with-profile=mutt mutt
 exec --no-startup-id gnome-terminal --window-with-profile=mailsync mailsync
 
+exec --no-startup-id ~/.i3/replace_osd
+
 exec --no-startup-id i3-msg "workspace mail"

@@ -1,0 +1,3 @@
+#!/usr/bin/env sh
+pkill -f notify-osd
+dunst -config ~/.i3/dunstrc &
