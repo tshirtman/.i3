@@ -54,5 +54,14 @@ if [ 1 -gt $(grep XDG_CURRENT_DESKTOP ~/.profile|wc -l) ]; then
 	cat .profile-control-center >> ~/.profile
 fi
 
+if [ ! -a ~/.config/dunst/dunstrc ]; then
+	mkdir -p ~/.config/dunst/
+	ln -s $PWD/dunstrc ~/.config/dunst/
+fi
+
+if [ 1 -gt $(dpkg -l dunst|grep ^ii) ]; then
+	sudo apt-get install dunst remove notify-osd
+fi
+
 echo 'please add the following rule to in "sudo visudo" if not present already'
 echo "%sudo   ALL=NOPASSWD: /usr/local/bin/brightness"
