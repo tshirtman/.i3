@@ -19,9 +19,9 @@ font xft:Sans 8
 
 # colors
 # colorclass 		border 	bg 	text 	indicator
-client.focused 		#850049 #853c00 #ffffff #ff0000
-client.unfocused	#523344 #523335 #ffffff #ff0000
-client.focused_inactive	#786870 #786868 #ffffff #aa0000
+client.focused 		#ffffff #ffffff #000000 #ff0000
+client.unfocused	#000000 #222222 #ffffff #ff0000
+client.focused_inactive	#000000 #555555 #ffffff #aa0000
 
 # The font above is very space-efficient, that is, it looks good, sharp and
 # clear in small sizes. However, if you need a lot of unicode glyphs or
