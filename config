@@ -180,6 +180,7 @@ bindsym XF86Calculator exec suspend
 bindsym Mod4+i exec i3-input
 bindsym Mod4+u border toggle
 bindsym mod4+c exec unity-control-center
+bindsym --release mod4+shift+s exec import /tmp/capture-$(date +%Y-%m-%dT%H-%M-%S).png
 
 # auto floating windows
 for_window [class="Gnome-control-center"] floating enable
