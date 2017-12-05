@@ -1,5 +1,5 @@
 [global]
-    font = Sans 10
+    font = Ubuntu 12
 
     # Allow a small subset of html markup:
     #   <b>bold</b>
@@ -63,7 +63,7 @@
     # the top and down respectevly.
     # The width can be negative.  In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
-    geometry = "500x7-30+20"
+    geometry = "500x7-5-30"
 
     # Shrink window if it's smaller than the width.  Will be ignored if
     # width is 0.
@@ -113,7 +113,7 @@
     # Draw a line of "separatpr_height" pixel height between two
     # notifications.
     # Set to 0 to disable.
-    separator_height = 1
+    separator_height = 10
 
     # Padding between text and separator.
     padding = 8
@@ -127,12 +127,12 @@
     #  * foreground: use the same color as the foreground;
     #  * frame: use the same color as the frame;
     #  * anything else will be interpreted as a X color.
-    separator_color = frame
+    separator_color = "#00000000"
 
     # Print a notification on startup.
     # This is mainly for error detection, since dbus (re-)starts dunst
     # automatically after a crash.
-    startup_notification = false
+    startup_notification = true
 
     # dmenu path.
     dmenu = /usr/bin/dmenu -p dunst:
@@ -144,10 +144,10 @@
     icon_position = left
 
     # Paths to default icons.
-    icon_folders = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
+    icon_folders = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/:/usr/share/icons/HighContrast/16x16/status/
 
 [frame]
-    width = 1
+    width = 0
     color = "#850049"
 
 [shortcuts]
@@ -174,13 +174,13 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#444444"
-    foreground = "#888888"
+    background = "#000000"
+    foreground = "#FFFFFF"
     timeout = 10
 
 [urgency_normal]
-    background = "#000000"
-    foreground = "#ffffff"
+    background = "#ffffff"
+    foreground = "#000000"
     timeout = 10
 
 [urgency_critical]
