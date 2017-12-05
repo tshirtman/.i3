@@ -202,7 +202,7 @@ assign [class="Pidgin"] "chat"
 assign [title="Transmission"] "dl"
 for_window [title="mutt"] move workspace "mail"
 for_window [title="mailsync"] move workspace "mail"
-for_window [title="gabriel@pi"] move workspace "irc"
+for_window [title="gabriel@pi"] move workspace "chat"
 
 # autostart apps
 exec --no-startup-id keynav
