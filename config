@@ -196,10 +196,16 @@ for_window [class="vlc"] floating enable
 
 # place specific windows on specific desktops by default
 assign [class="Firefox"] "web"
+
 assign [class="Telegram"] "chat"
-assign [class="Slack"] "chat"
+assign [class="Zulip"] "chat"
+assign [class="discord"] "chat"
 assign [class="Pidgin"] "chat"
+
+assign [class="obs"] "OBS"
+
 assign [title="Transmission"] "dl"
+
 for_window [title="mutt"] move workspace "mail"
 for_window [title="mailsync"] move workspace "mail"
 for_window [title="gabriel@pi"] move workspace "chat"
@@ -210,13 +216,15 @@ exec --no-startup-id nm-applet
 exec --no-startup-id unity-settings-daemon
 exec --no-startup-id update-notifier
 
-exec --no-startup-id slack
+exec --no-startup-id /home/gabriel/Téléchargements/zulip-1.8.2-x86_64.AppImage
+exec --no-startup-id Exec=~/dev/Whatsapp-Desktop/dist/WhatsApp-linux-x64/WhatsApp
 exec --no-startup-id ~/Téléchargements/Telegram/Telegram
-exec --no-startup-id pidgin
+exec --no-startup-id discord
 exec --no-startup-id firefox
 exec --no-startup-id gnome-terminal --window-with-profile=irc irc
 exec --no-startup-id gnome-terminal --window-with-profile=mutt mutt
 exec --no-startup-id gnome-terminal --window-with-profile=mailsync mailsync
+exec --no-startup-id redshift-gtk
 
 exec --no-startup-id ~/.i3/replace_osd
 
