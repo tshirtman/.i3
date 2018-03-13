@@ -33,7 +33,7 @@ client.focused_inactive	#000000 #555555 #ffffff #aa0000
 floating_modifier Mod4
 
 # start a terminal
-bindsym Mod4+Return exec gnome-terminal --hide-menubar
+bindsym Mod4+Return exec i3-sensible-terminal
 
 # kill focused window
 bindsym Mod4+Shift+c kill
