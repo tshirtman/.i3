@@ -39,9 +39,13 @@ bindsym Mod4+Return exec i3-sensible-terminal
 bindsym Mod4+Shift+c kill
 
 # start dmenu (a program launcher)
-bindsym Mod4+x exec dmenu_run -p 'run:'
-bindsym Mod4+p exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -p 'start:' -l 15"
-bindsym Mod4+o exec --no-startup-id xdg-open "$(find -type f | dmenu -i -p 'open:' -l 15)" 2> /tmp/out.txt
+# bindsym Mod4+x exec dmenu_run -p 'run:'
+bindsym Mod4+x exec rofi -show run
+bindsym Mod4+apostrophe exec rofi -show window
+bindsym Mod4+p exec rofi -show drun
+
+# bindsym Mod4+p exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -p 'start:' -l 15"
+bindsym Mod4+o exec --no-startup-id xdg-open "$(find -type f | rofi -dmenu -i -p 'open:' -l 15)" 2> /tmp/out.txt
 bindsym Mod4+shift+o exec env > /tmp/out.txt
 
 # change focus
@@ -149,8 +153,8 @@ bar {
 }
 
 # dynamic tagging feature
-bindsym Mod4+t exec i3-msg workspace $(~/.i3/get_workspace_options.sh | dmenu -p "switch to:")
-bindsym Mod4+Shift+t exec i3-msg move container to workspace $(~/.i3/get_workspace_options.sh | dmenu -p 'move to:')
+bindsym Mod4+t exec i3-msg workspace $(~/.i3/get_workspace_options.sh | rofi -dmenu -p "switch to:")
+bindsym Mod4+Shift+t exec i3-msg move container to workspace $(~/.i3/get_workspace_options.sh | rofi -dmenu -p 'move to:')
 
 # toggle screen of workspace
 bindsym Mod4+d move container to output right
