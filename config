@@ -234,6 +234,7 @@ exec --no-startup-id gnome-terminal --window-with-profile=mailsync mailsync
 exec --no-startup-id redshift-gtk
 
 exec --no-startup-id ~/.i3/replace_osd
+exec --no-startup-id xrdb load ~/.Xresources
 
 exec --no-startup-id ~/.i3/replace_osd
 
