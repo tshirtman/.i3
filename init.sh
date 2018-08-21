@@ -6,13 +6,8 @@ ln -sf $PWD/i3blocks.conf ~/.i3blocks.conf
 mkdir -p ~/.local/share/fonts/
 ln -sf $PWD/fonts/* ~/.local/share/fonts/
 
-if [ ! -e ~/i3blocks ]
-then
-	git clone git://github.com/tshirtman/i3blocks ~/i3blocks
-	cd ~/i3blocks
-	make
-	cd -
-fi
+pip install --user netiface xkbgroup basiciw colour libpulseaudio
+pip install --user https://github.com/enkore/i3pystatus/archive/master.zip
 
 if [ ! -e /usr/local/bin/brightness ]; then
 	sudo cp $HOME/.i3/brightness /usr/local/bin/
