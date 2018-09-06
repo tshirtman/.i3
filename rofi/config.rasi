@@ -1,5 +1,5 @@
 configuration {
-	modi: "window,run,drun,keys,ssh";
+	modi: "window,run,drun,keys,ssh,📶:~/.i3/nmrofi.sh";
 	width: 50;
 	lines: 15;
 	columns: 1;
@@ -11,6 +11,7 @@ configuration {
 	/* xoffset: 0; */
 	/* fixed-num-lines: true; */
 	/* show-icons: false; */
+	show-icons: true;
 	terminal: "rofi-sensible-terminal";
 	ssh-client: "autossh";
 	/* ssh-client: "ssh"; */
@@ -49,13 +50,13 @@ configuration {
 	scroll-method: 0;
 	fake-background: "screenshot";
 	window-format: "{w}    {i}{c}   {t}";
+	/* window-format: "{w}\t{i}{c}\t{t}"; */
 	click-to-exit: true;
 	show-match: true;
 	/* theme: "Adapta-Nokto.rasi"; */
 	/* theme: "android_notification.rasi"; */
 	/* theme: "Arc.rasi"; */
 	/* theme: "arthur.rasi"; */
-	theme: "theme.rasi";
 	/* theme: "blue.rasi"; */
 	/* theme: "c64.rasi"; */
 	/* theme: "DarkBlue.rasi"; */
@@ -69,7 +70,8 @@ configuration {
 	/* theme: "gruvbox-light-soft.rasi"; */
 	/* theme: "Indego.rasi"; */
 	/* theme: "lb.rasi"; */
-	/* theme: "Monokai.rasi"; */  // nice
+	theme: "Monokai.rasi"; // nice
+	/* theme: "theme.rasi"; */
 	/* theme: "paper-float.rasi"; */
 	/* theme: "Paper.rasi"; */
 	/* theme: "Pop-Dark.rasi"; */
@@ -84,11 +86,11 @@ configuration {
 	max-history-size: 25;
 	combi-hide-mode-prefix: false;
 	pid: "/run/user/1000/rofi.pid";
-	display-window: "Window: ";
+	display-window: "📺 ";
 	display-windowcd: "WindowCMD: ";
-	display-run: "Run: ";
-	display-ssh: "SSH: ";
-	display-drun: "Start: ";
+	display-run: " ";
+	display-ssh: " ";
+	display-drun: "📦 ";
 	display-combi: "Combi: ";
 	display-keys: "Keys: ";
 	kb-primary-paste: "Control+V,Shift+Insert";

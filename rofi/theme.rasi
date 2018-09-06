@@ -32,7 +32,7 @@ configuration {
     // Black
     black:       #3d352a;
     lightblack:  #554444;
-    tlightblack:  #554444cc;
+    tlightblack:  #555555EE;
     //
     // Red
     red:         #cd5c5c;
@@ -60,11 +60,11 @@ configuration {
     lightcyan:     #b0c4de;
     //
     // White
-    white:      #bbaa99;
-    lightwhite:     #ddccbb;
+    white:      #ffffff;
+    lightwhite:     #eeeeee;
     //
     // Bold, Italic, Underline
-    highlight:     underline bold #ffffff;
+    highlight:     underline bold;
 
     transparent: rgba(0,0,0,0);
     font: "Sauce Code Powerline Medium 12";
@@ -101,7 +101,7 @@ configuration {
 }
 
 #inputbar {
-    color: @lightgreen;
+    color: @white;
     padding: 11px;
     background-color: @tlightblack;
     border: 2px 2px 2px 2px;
@@ -132,7 +132,9 @@ configuration {
     font:inherit;
 }
 #element selected.normal {
-    background-color: @blue;
+    // background-color: @blue;
+    background-color: @lightwhite;
+    text-color: @black;
 }
 #element normal active {
     foreground: @lightblue;
