@@ -3,9 +3,10 @@ from os.path import expanduser
 from i3pystatus.mail.maildir import MaildirMail
 from i3pystatus.updates.aptget import AptGet
 
+
 status = Status()
 
-status.register('clock', format='%d-%m %H:%M')
+status.register('clock', format='%a %d-%m %H:%M')
 status.register(
     'pomodoro',
     sound='/usr/share/sounds/sound-icons/pipe.wav',
