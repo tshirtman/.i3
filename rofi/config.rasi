@@ -1,5 +1,5 @@
 configuration {
-	modi: "window,run,drun,keys,ssh,📶:~/.i3/nmrofi.sh";
+	modi: "window,run,drun,keys,ssh";
 	width: 50;
 	lines: 15;
 	columns: 1;
@@ -85,14 +85,13 @@ configuration {
 	/* color-window: ; */
 	max-history-size: 25;
 	combi-hide-mode-prefix: false;
-	pid: "/run/user/1000/rofi.pid";
 	display-window: "📺 ";
 	display-windowcd: "WindowCMD: ";
 	display-run: " ";
 	display-ssh: " ";
 	display-drun: "📦 ";
 	display-combi: "Combi: ";
-	display-keys: "Keys: ";
+	display-keys: "Keys ";
 	kb-primary-paste: "Control+V,Shift+Insert";
 	kb-secondary-paste: "Control+v,Insert";
 	kb-clear-line: "Control+w";
