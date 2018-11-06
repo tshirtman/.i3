@@ -150,6 +150,18 @@ bar {
         # status_command ~/i3blocks/i3blocks
 	# tray_output VGA-0
 	font xft:Sans 12
+
+	colors {
+		background #000000
+		# statusline #00A5FF #that neon blue
+		separator #666666
+		# tag bar colors
+		# class            border  back    text
+		focused_workspace  #101010 #ffffff #000000
+		active_workspace   #101010 #ffffff #555555
+		inactive_workspace #101010 #000000 #bbbbbb
+		urgent_workspace   #101010 #aa0000 #ffffff
+	}
 }
 
 # dynamic tagging feature
