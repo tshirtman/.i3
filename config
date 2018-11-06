@@ -161,6 +161,7 @@ bar {
 		active_workspace   #101010 #ffffff #555555
 		inactive_workspace #101010 #000000 #bbbbbb
 		urgent_workspace   #101010 #aa0000 #ffffff
+		binding_mode       #101010 #8888ff #000000
 	}
 }
 
