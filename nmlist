@@ -1,0 +1,3 @@
+#!/usr/bin/env sh
+
+nmcli device wifi|sed -s 1d

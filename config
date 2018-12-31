@@ -149,7 +149,7 @@ bar {
         status_command python3 ~/.i3/status.py
         # status_command ~/i3blocks/i3blocks
 	# tray_output VGA-0
-	font xft:Sans 12
+	font xft:Sans 9
 
 	colors {
 		background #000000
@@ -201,6 +201,8 @@ bindsym mod4+c exec unity-control-center
 bindsym --release mod4+shift+s exec import /tmp/capture-$(date +%Y-%m-%dT%H-%M-%S).png
 bindsym mod4+comma exec pkill -STOP -f firefox
 bindsym mod4+Shift+comma exec pkill -CONT -f firefox
+bindsym mod4+Shift+x exec i3lock -c 222222 -f
+bindsym mod4+Shift+b exec ~/.i3/tools/swap_ctrl
 
 # auto floating windows
 for_window [class="Gnome-control-center"] floating enable
@@ -240,10 +242,8 @@ exec --no-startup-id /home/gabriel/Téléchargements/zulip-1.8.2-x86_64.AppImage
 exec --no-startup-id Exec=~/dev/Whatsapp-Desktop/dist/WhatsApp-linux-x64/WhatsApp
 exec --no-startup-id ~/Téléchargements/Telegram/Telegram
 exec --no-startup-id discord
-exec --no-startup-id firefox
-exec --no-startup-id gnome-terminal --window-with-profile=irc irc
-exec --no-startup-id gnome-terminal --window-with-profile=mutt mutt
-exec --no-startup-id gnome-terminal --window-with-profile=mailsync mailsync
+exec --no-startup-id i3-sensible-terminal -e autossh pub.tshirtman.fr
+
 exec --no-startup-id redshift-gtk
 
 exec --no-startup-id ~/.i3/replace_osd

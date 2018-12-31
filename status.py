@@ -2,7 +2,7 @@ from i3pystatus import Status
 from os.path import expanduser
 from i3pystatus.mail.maildir import MaildirMail
 from i3pystatus.updates.aptget import AptGet
-
+import i3pystatus.network
 
 status = Status()
 
@@ -15,13 +15,21 @@ status.register(
     long_break_duration=15 * 60
 )
 
+def cidr4(addr, mask):
+    return "{addr}/{bits}".format(
+        addr='…'+'.'.join(addr.split('.')[-2:]),
+        bits=i3pystatus.network.prefix4(mask)
+    )
+
+i3pystatus.network.cidr4 = cidr4
+
 # status.register('xkblayout', layouts=['fr bepo', 'fr azerty', 'en qwerty'])
 # status.register('load')
 # status.register('temp', format='0.f°C')
 status.register(
     'battery',
     battery_ident='ALL',
-    format='{status}{vertical_bar}({consumption:.2f}W){remaining:%E%hh:%Mm}',
+    format='{status}{vertical_bar}({consumption:.2f}w){remaining:%E%hh:%Mm}',
     alert=True,
     alert_percentage=5,
     status={
@@ -34,7 +42,7 @@ status.register(
 status.register(
     'network',
     interface='wlp4s0',
-    format_up='{v4cidr}({essid})',
+    format_up='{v4cidr}({essid:.6})',
     format_down='',
 )
 

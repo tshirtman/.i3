@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+current=$(gsettings get org.gnome.desktop.input-sources xkb-options)
+
+if [ "$current" != '@as []' ]
+then
+	value="[]"
+else
+	value="['ctrl:swapcaps']"
+fi
+gsettings set org.gnome.desktop.input-sources xkb-options "$value"
+notify-send "keyboard swap switched to $value"

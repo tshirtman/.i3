@@ -26,7 +26,7 @@ while true
 do
 	read -p "do you want to swap ctrl and capslock (using gsettings) (Y/N)" yn
 case $yn in
-	[Yy]*) gsettings set org.gnome.desktop.input-sources xkb-options "['ctrl:swapcaps']"; break;;
+	[Yy]*) ~/.i3/tools/swap_ctrl; break;;
 	[Nn]*) break;;
 	*) echo "please answer (y)es or (n)o";;
 esac
