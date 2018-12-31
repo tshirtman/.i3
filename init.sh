@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 # sudo apt-get install keynav acpi jq i3 pcmanfm lm-sensors sysstat
 ln -sf $PWD/keynavrc ~/.keynavrc
 ln -sf $PWD/i3blocks.conf ~/.i3blocks.conf
@@ -47,6 +47,10 @@ fi
 
 if [ 1 -gt $(grep XDG_CURRENT_DESKTOP ~/.profile|wc -l) ]; then
 	cat .profile-control-center >> ~/.profile
+fi
+
+if [ ! -a ~/.Xresources ]; then
+	ln -s $PWD/Xresources ~/.Xresources
 fi
 
 if [ ! -a ~/.config/dunst/dunstrc ]; then

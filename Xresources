@@ -1,0 +1,112 @@
+URxvt.termName:  screen-256color
+
+URxvt.scrollTtyKeypress:  true
+URxvt.scrollTtyOutput:  false
+URxvt.scrollWithBuffer:  false
+URxvt.scrollBar:  false
+URxvt.background:  Black
+URxvt.foreground:  White
+URxvt.colorUL:  yellow
+URxvt.underlineColor:  yellow
+
+/* URxvt.font: -misc-fixed-medium-r-semicondensed--12-120-75-75-c-60-iso10646-1 */
+
+/* URxvt.font:  -xos4-terminus-medium-*-*-*-14-*-*-*-*-*-iso8859-15,xft:terminus:pixelsize:12 */
+
+/* URxvt.font:  xft:LiberationMono:autohint=true:pixelsize=15 */
+/* URxvt.boldFont:  xft:LiberationMono:bold:autohint=true:pixelsize=15 */
+/* URxvt.italicFont:  xft:LiberationMono:italic:autohint=true:pixelsize=15 */
+/* URxvt.boldItalicFont:  xft:LiberationMono:bold:italic:autohint=true:pixelsize=15 */
+
+/* URxvt.font:  xft:UbuntuMono:pixelsize:15 */
+/* URxvt.boldFont:  xft:UbuntuMono:bold:pixelsize:15 */
+/* URxvt.italicFont:  xft:UbuntuMono:italic:pixelsize:15 */
+/* URxvt.boldItalicFont:  xft:UbuntuMono:bold:italic:pixelsize:15 */
+
+/* URxvt.font:  xft:DejaVuSansMono:pixelsize=15:autohint=true */
+/* URxvt.boldFont:  xft:DejaVuSansMono:bold:pixelsize=15:autohint=true */
+/* URxvt.italicFont:  xft:DejaVuSans:italic:pixelsize=15:autohint=true */
+/* URxvt.boldItalicFont:  xft:DejaVuSans:italic:bold:pixelsize=15:autohint=true */
+
+URxvt.font:  xft:Monospace:pixelsize=15:autohint=true, \
+             xft:Noto Color Emoji:pixelsize=12, \
+             xft:Emoji One, \
+             xft:Symbola
+
+URxvt.boldFont:  xft:Monospace:bold:pixelsize=15:autohint=true
+URxvt.italicFont:  xft:Monospace:italic:pixelsize=15:autohint=true
+URxvt.boldItalicFont:  xft:Monospace:italic:bold:pixelsize=15:autohint=true
+
+
+/* URxvt.font:  -xos4-terminus-medium-*-*-*-14-*-*-*-*-*-iso8859-15,xft:terminus:pixelsize:12 */
+/* URxvt.boldFont:  -xos4-terminus-bold-*-*-*-14-*-*-*-*-*-iso8859-15,xft:terminus:bold:pixelsize:12 */
+/* URxvt.italicFont:  xft:Bitstream Vera Sans Mono:italic:autohint=true:pixelsize=12 */
+/* URxvt.boldItalicFont:  xft:Bitstream Vera Sans Mono:bold:italic:autohint=true:pixelsize=12 */
+
+URxvt.saveLines:  65535
+
+URxvt.perl-ext:
+URxvt.perl-ext-common: font-size,default,matcher,url-select,keyboard-select
+URxvt.url-select.button: 2
+
+URxvt.keysym.c-plus:  font-size:increase
+URxvt.keysym.c-minus: font-size:decrease
+URxvt.keysym.c-equal: font-size:reset
+URxvt.keysym.c-slash: font-size:show
+URxvt.font-size.step: 2
+
+
+! Base16 Default Dark
+! Scheme: Chris Kempson (http://chriskempson.com)
+
+#define base00 #181818
+#define base01 #282828
+#define base02 #383838
+#define base03 #585858
+#define base04 #b8b8b8
+#define base05 #d8d8d8
+#define base06 #e8e8e8
+#define base07 #f8f8f8
+#define base08 #ab4642
+#define base09 #dc9656
+#define base0A #f7ca88
+#define base0B #a1b56c
+#define base0C #86c1b9
+#define base0D #7cafc2
+#define base0E #ba8baf
+#define base0F #a16946
+
+*foreground:   base05
+#ifdef background_opacity
+*background:   [background_opacity]base00
+#else
+*background:   base00
+#endif
+*cursorColor:  base05
+
+*color0:       base00
+*color1:       base08
+*color2:       base0B
+*color3:       base0A
+*color4:       base0D
+*color5:       base0E
+*color6:       base0C
+*color7:       base05
+
+*color8:       base03
+*color9:       base08
+*color10:      base0B
+*color11:      base0A
+*color12:      base0D
+*color13:      base0E
+*color14:      base0C
+*color15:      base07
+
+! Note: colors beyond 15 might not be loaded (e.g., xterm, urxvt),
+! use 'shell' template to set these if necessary
+*color16:      base09
+*color17:      base0F
+*color18:      base01
+*color19:      base02
+*color20:      base04
+*color21:      base06
