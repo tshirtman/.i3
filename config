@@ -47,7 +47,7 @@ bindsym Mod4+p exec rofi -show drun
 # bindsym Mod4+p exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -p 'start:' -l 15"
 bindsym Mod4+o exec --no-startup-id xdg-open "$(find -type f | rofi -dmenu -i -p 'open:' -l 15)" 2> /tmp/out.txt
 bindsym Mod4+shift+o exec env > /tmp/out.txt
-bindsym Mod4+shift+n exec .local/bin/nmrofi.sh
+bindsym Mod4+shift+n exec ~/.i3/nmrofi.sh
 
 # change focus
 bindsym Mod4+j focus down
