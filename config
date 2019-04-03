@@ -106,6 +106,9 @@ bindsym Mod4+shift+a focus child
 bindsym Mod4+minus move scratchpad
 bindsym Mod4+plus scratchpad show
 
+# keymap switch
+bindsym --release Mod4+Escape exec ~/.i3/toggle_keymap.sh
+
 # reload the configuration file
 #bindsym Mod4+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
