@@ -92,4 +92,8 @@ status.register(
     ]
 )
 
+status.register(
+    'rofication'
+)
+
 status.run()

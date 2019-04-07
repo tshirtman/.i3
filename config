@@ -23,6 +23,10 @@ client.focused 		#ffffff #ffffff #000000 #ff0000
 client.unfocused	#000000 #222222 #ffffff #ff0000
 client.focused_inactive	#000000 #555555 #ffffff #aa0000
 
+default_border normal
+default_floating_border normal
+
+hide_edge_borders both
 # The font above is very space-efficient, that is, it looks good, sharp and
 # clear in small sizes. However, if you need a lot of unicode glyphs or
 # right-to-left text rendering, you should instead use pango for rendering and
@@ -43,6 +47,7 @@ bindsym Mod4+Shift+c kill
 bindsym Mod4+x exec rofi -show run
 bindsym Mod4+apostrophe exec rofi -show window
 bindsym Mod4+p exec rofi -show drun
+bindsym Mod4+b exec ~/dev/Rofication/rofication-gui.py
 
 # bindsym Mod4+p exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -p 'start:' -l 15"
 bindsym Mod4+o exec --no-startup-id xdg-open "$(find -type f | rofi -dmenu -i -p 'open:' -l 15)" 2> /tmp/out.txt
@@ -241,6 +246,7 @@ exec --no-startup-id keynav
 exec --no-startup-id nm-applet
 exec --no-startup-id unity-settings-daemon
 exec --no-startup-id update-notifier
+exec --no-startup-id unclutter
 
 exec --no-startup-id /home/gabriel/Téléchargements/zulip-1.8.2-x86_64.AppImage
 exec --no-startup-id Exec=~/dev/Whatsapp-Desktop/dist/WhatsApp-linux-x64/WhatsApp
@@ -252,7 +258,6 @@ exec --no-startup-id redshift-gtk
 
 exec --no-startup-id ~/.i3/replace_osd
 exec --no-startup-id xrdb load ~/.Xresources
-
-exec --no-startup-id ~/.i3/replace_osd
+exec --no-startup-id ~/dev/Rofication/rofication-daemon.py
 
 exec --no-startup-id i3-msg "workspace mail"
