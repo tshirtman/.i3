@@ -1,19 +1,24 @@
+# coding: utf8
 from i3pystatus import Status
 from os.path import expanduser
 from i3pystatus.mail.maildir import MaildirMail
+# from i3pystatus.mail.notmuchmail import  Notmuch
 from i3pystatus.updates.aptget import AptGet
 import i3pystatus.network
 
 status = Status()
 
+# status.register('xkblayout', layouts=['azerty', 'fr bepo', 'us qwerty'])
 status.register('clock', format='%a %d-%m %H:%M')
 status.register(
     'pomodoro',
     sound='/usr/share/sounds/sound-icons/pipe.wav',
     pomodoro_duration=45 * 60,
     break_duration=5 * 60,
-    long_break_duration=15 * 60
+    long_break_duration=15 * 60,
+    inactive_format="🍅",
 )
+status.register('timer', format_stopped='⏱')
 
 def cidr4(addr, mask):
     return "{addr}/{bits}".format(
@@ -29,7 +34,7 @@ i3pystatus.network.cidr4 = cidr4
 status.register(
     'battery',
     battery_ident='ALL',
-    format='{status}{vertical_bar}({consumption:.2f}w){remaining:%E%hh:%Mm}',
+    format='{status}{vertical_bar}{remaining:%E%hh:%Mm}',
     alert=True,
     alert_percentage=5,
     status={
@@ -59,23 +64,43 @@ status.register(
     format='{avail:.1f}G'
 )
 
-status.register(
-    'mail',
-    format='{unread}',
-    format_plural = "{account}{unread}",
-    backends=[
-        MaildirMail(account='🏣', directory=expanduser('~/Mail/tangible/INBOX/'))
-    ],
-)
+# status.register(
+#     'mail',
+#     format='{unread}',
+#     format_plural = "{account}{unread}",
+#     backends=[
+#         Notmuch(
+#             db_path='/home/gabriel/Mail/',
+#             query=''
+#             # account='📬',
+#             # directory=expanduser('~/Mail/tshirtman.dev/INBOX/')
+#         ),
+#     ],
+# )
 
-status.register(
-    'mail',
-    format='{unread}',
-    format_plural = "{account}{unread}",
-    backends=[
-        MaildirMail(account='📧', directory=expanduser('~/Mail/Personal/INBOX/')),
-    ],
-)
+# status.register(
+#     'mail',
+#     format='{unread}',
+#     format_plural = "{account}{unread}",
+#     backends=[
+#         MaildirMail(
+#             account='📬',
+#             directory=expanduser('~/Mail/tshirtman.dev/INBOX/')
+#         ),
+#     ],
+# )
+
+# status.register(
+#     'mail',
+#     format='{unread}',
+#     format_plural = "{account}{unread}",
+#     backends=[
+#         MaildirMail(
+#             account='📬',
+#             directory=expanduser('~/Mail/Personal/INBOX/')
+#         ),
+#     ],
+# )
 
 status.register(
     'pulseaudio',
@@ -83,17 +108,29 @@ status.register(
     format_muted='🔇',
 )
 
+# status.register(
+#     'updates',
+#     format='{count}!',
+#     format_no_updates='',
+#     backends=[
+#         AptGet()
+#     ]
+# )
+
+# status.register(
+#     'rofication'
+# )
+
+status.register('temp')
 status.register(
-    'updates',
-    format='{count}!',
-    format_no_updates='',
-    backends=[
-        AptGet()
-    ]
+    'bitstamp',
+    url='https://www.bitstamp.net/api/v2/ticker/btceur',
+    colorize=True,
+    color_up="#00BB00",
+    color_down="#BB6666",
+    interval=5,
+    format='{status}{last:,.02f}€/₿',
 )
 
-status.register(
-    'rofication'
-)
-
+status.register('backlight', format='{percentage}%')
 status.run()
