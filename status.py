@@ -121,7 +121,14 @@ status.register(
 #     'rofication'
 # )
 
-status.register('temp')
+status.register(
+    'temp',
+    lm_sensors_enabled=True,
+    dynamic_color=True,
+    urgent_on='warning',
+    format="{Package_id_0}°C {Core_0_bar}{Core_1_bar}",
+)
+status.register('cpu_usage_graph')
 status.register(
     'bitstamp',
     url='https://www.bitstamp.net/api/v2/ticker/btceur',

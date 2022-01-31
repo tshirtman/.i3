@@ -175,8 +175,8 @@ bar {
 }
 
 # dynamic tagging feature
-bindsym Mod4+t exec i3-msg workspace $(~/.i3/get_workspace_options.sh | rofi -dmenu -p "switch to:")
-bindsym Mod4+Shift+t exec i3-msg move container to workspace $(~/.i3/get_workspace_options.sh | rofi -dmenu -p 'move to:')
+bindsym Mod4+t exec i3-msg workspace $(~/.i3/get_workspace_options.sh | rofi -dmenu -p "switch to")
+bindsym Mod4+Shift+t exec i3-msg move container to workspace $(~/.i3/get_workspace_options.sh | rofi -dmenu -p 'move to')
 
 # toggle screen of workspace
 bindsym Mod4+d move container to output right
@@ -202,12 +202,14 @@ bindsym XF86AudioPlay exec mocp -G
 bindsym XF86AudioNext exec mocp -f
 bindsym XF86AudioPrev exec mocp -r
 bindsym XF86Mail exec ~/bin/tv
-bindsym XF86Display exec sudo hibernate
+bindsym XF86Favorites exec sudo hibernate
+bindsym XF86Display exec xrandr --auto
 bindsym XF86Calculator exec suspend
 bindsym Mod4+i exec i3-input
 bindsym Mod4+u border toggle
-bindsym mod4+c exec unity-control-center
+bindsym XF86Tools exec gnome-control-center
 bindsym --release mod4+shift+s exec import /tmp/capture-$(date +%Y-%m-%dT%H-%M-%S).png
+bindsym --release Print exec flameshot gui
 bindsym mod4+comma exec pkill -STOP -f firefox
 bindsym mod4+Shift+comma exec pkill -CONT -f firefox
 bindsym mod4+Shift+x exec i3lock -c 222222 -f
@@ -216,24 +218,23 @@ bindsym mod4+Shift+b exec ~/.i3/tools/swap_ctrl
 # auto floating windows
 for_window [class="Gnome-control-center"] floating enable
 for_window [class="main.py"] floating enable
-for_window [class="python2.7"] floating enable
-for_window [class="python2"] floating enable
 for_window [class="python3"] floating enable
-for_window [class="python3.6"] floating enable
+for_window [class="python3.8"] floating enable
 for_window [class="display2.py"] floating enable
 for_window [class="kviewer"] floating enable
 for_window [class="mplayer"] floating enable
+for_window [class="mpv"] floating enable
 for_window [class="vlc"] floating enable
 
 # place specific windows on specific desktops by default
 assign [class="Firefox"] "web"
 
 assign [class="Telegram"] "chat"
-assign [class="Zulip"] "chat"
 assign [class="discord"] "chat"
 assign [class="Pidgin"] "chat"
+assign [class="Signal"] "chat"
 
-assign [class="obs"] "OBS"
+assign [class="obs"] "obs"
 
 assign [title="Transmission"] "dl"
 
@@ -246,10 +247,8 @@ exec --no-startup-id keynav
 exec --no-startup-id nm-applet
 exec --no-startup-id unity-settings-daemon
 exec --no-startup-id update-notifier
-exec --no-startup-id unclutter
+exec --no-startup-id unclutter -noevents
 
-exec --no-startup-id /home/gabriel/Téléchargements/zulip-1.8.2-x86_64.AppImage
-exec --no-startup-id Exec=~/dev/Whatsapp-Desktop/dist/WhatsApp-linux-x64/WhatsApp
 exec --no-startup-id ~/Téléchargements/Telegram/Telegram
 exec --no-startup-id discord
 exec --no-startup-id i3-sensible-terminal -e autossh pub.tshirtman.fr
@@ -261,3 +260,4 @@ exec --no-startup-id xrdb load ~/.Xresources
 exec --no-startup-id ~/dev/Rofication/rofication-daemon.py
 
 exec --no-startup-id i3-msg "workspace mail"
+exec --no-startup-id ~/Téléchargements/Immersed-x86_64.AppImage
